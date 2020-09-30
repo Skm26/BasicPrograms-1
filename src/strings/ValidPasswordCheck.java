@@ -7,18 +7,40 @@ package strings;
  * A password must contain at least two digits.*/
 
 public class ValidPasswordCheck {
-	String password = "password11";
+	String password = "1111111111111111111111";
 	static String passwordNotCreated = "Could not create passoword";
 
 	public static void main(String[] args) {
 		ValidPasswordCheck v = new ValidPasswordCheck();
 
-		System.out.println("Password created: " + v.passwordCheck());
+		System.out.println("Password: " + v.passwordValidator());
+		System.out.println("Pass:" + v.passwordCheck());
 
 	}
+	//not valid yet
+public String passwordCheck() {
+	int digitCount = 0;
+	for( int i = 0; i < password.length(); ++i) {
+		if( password.length() >= 10)
+				if (Character.isLetterOrDigit(password.charAt(i)) == true)
+					
+					if (Character.isDigit(password.charAt(i)) ==  true) 
+					digitCount++;
 
-	public String passwordCheck() {
-		if (lengthPassword() == true && containsLetters() == true && containsDigit() == true) {
+						if (digitCount >= 2) 
+							return password;
+					
+					}
+				return passwordNotCreated;
+					
+					
+				
+		}
+
+
+	public String passwordValidator() {
+		if (lengthPassword() == true && containsLetters() == true && containsDigit() == true
+				&& containsAtLeastTwoNumbers() == true) {
 			return password;
 		}
 
@@ -47,28 +69,20 @@ public class ValidPasswordCheck {
 		return false;
 	}
 
-/*	public boolean containsAtLeastTwoNumbers() {
-		
-		//not defined correctly yet
-		int lettercount = 0;
-		int digitCount = 0;
-		for (int i = 0; i <= password.length() - 1; i++) {
+	public boolean containsAtLeastTwoNumbers() {
 
-			char d = password.charAt(i);
-			digitCount++;
-			if (containsDigit() == true) {
+		int digitCount = 0;
+		for (int i = 0; i < password.length(); ++i) {
+
+			char passChar = password.charAt(i);
+
+			if (Character.isDigit(passChar) == true)
 
 				digitCount++;
-			} else if (containsLetters() == true) {
-				lettercount++;
-			} else {
-				return false;
-			}
-
-		}
+}
 		if (digitCount >= 2)
 			return true;
 		return false;
 
-	}*/
+	}
 }
