@@ -9,29 +9,42 @@ public class MiddleCharacter {
 
 	int indexPosition;
 	int lengthOfSubString;
-	String myString = "123456788990";
+	String myString = "12345678";
 
 	public static void main(String[] args) {
 		MiddleCharacter m = new MiddleCharacter();
-		System.out.println(m.middleChar("123456788990"));
+		System.out.println(m.middleChar("12345678"));
 		System.out.println(m.middleChar());
+		System.out.println(m.getMiddleChar("12345678"));
 
 	}
+	// v1
+	public char[] getMiddleChar(String myString) {
+		//checks condition and return x or y 
+		char[] x = { myString.charAt((0 + (myString.length() - 1)) / 2),
+				myString.charAt((0 + (myString.length())) / 2) };
+		char[] y = { myString.charAt((0 + (myString.length())) / 2) };
+		if (myString.length() % 2 == 0) {
+			return x;
+		}
+		return y;
+	}
+//v2
+	public char[] middleChar(String myString) {
 
-	public char middleChar(String myString) {
-		char[] c = new char[myString.length()];
-		for (int i = 0; i <= c.length - 1; i++) {
-			c[i] = myString.charAt(i);
-			if (c.length % 2 == 0) {
-
-				return myString.charAt((0 + (myString.length() - 1)) / 2); // will return 6
-
-			}
+		if (myString.length() % 2 == 0) {
+			char[] x = { myString.charAt((0 + (myString.length() - 1)) / 2),
+					myString.charAt((0 + (myString.length())) / 2) };
+			return x;
 
 		}
-		return myString.charAt((0 + (myString.length() - 1)) / 2);
+
+		char[] x = { myString.charAt((0 + (myString.length())) / 2) };
+		return x;
 	}
 
+	
+//v3
 	public String middleChar() {
 
 		// check if String has odd or even length;

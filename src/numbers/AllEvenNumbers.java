@@ -7,7 +7,7 @@ public class AllEvenNumbers {
 
 	public void evenNumbers() {
 
-		for (int i = 0; i <= 100; i++)
+		for (int i = 0; i <= 100; ++i)
 			if (i % 2 == 0)
 				System.out.println(i);
 
@@ -16,9 +16,9 @@ public class AllEvenNumbers {
 	public void evenNumbersList() {
 		List<Integer> li = new ArrayList<Integer>();
 		
-		for (int i=0; i<=100; i++ ){
+		for (int i = 0; i <= 100; ++i ){
 			li.add(i);
-			if (i%2==0) {
+			if (i % 2 == 0) {
 				System.out.println(li.get(i));
 			}
 		}

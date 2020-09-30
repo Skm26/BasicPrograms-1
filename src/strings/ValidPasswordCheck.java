@@ -18,7 +18,7 @@ public class ValidPasswordCheck {
 	}
 
 	public String passwordCheck() {
-		if (lengthPassword() == true && containsLetters() ==true && containsDigit() == true) {
+		if (lengthPassword() == true && containsLetters() == true && containsDigit() == true) {
 			return password;
 		}
 
@@ -31,7 +31,7 @@ public class ValidPasswordCheck {
 	}
 
 	public boolean containsLetters() {
-		for (int i = 0; i <= password.length() - 1; i++) {
+		for (int i = 0; i < password.length(); ++i) {
 			if ((Character.isLetter(password.charAt(i)) == true))
 				return true;
 
@@ -40,7 +40,7 @@ public class ValidPasswordCheck {
 	}
 
 	public boolean containsDigit() {
-		for (int i = 0; i <= password.length() - 1; i++) {
+		for (int i = 0; i < password.length(); ++i) {
 			if ((Character.isDigit(password.charAt(i)) == true))
 				return true;
 		}

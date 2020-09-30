@@ -1,19 +1,33 @@
 package strings;
-//Check if a String contains another String; return true or false
+
+import java.util.Scanner;
+
+//Check if a String contains another String; return message
 public class ContainsString {
-	
-	
+
+	private static String haystack = " MyString";
+
 	public static void main(String[] args) {
+
 		ContainsString c = new ContainsString();
-		System.out.println(c.containsString("String to compare with", "String"));
-		System.out.println(c.containsString("String to compare with", "1"));
-	
-}
-	
-	boolean containsString(String compareString, String myString) {
-		
-		return ( compareString.contains(myString));
-		
-		
+
+		try (Scanner input = new Scanner(System.in)) {
+			System.out.println("Enter your string: ");
+			String needle = input.next();
+
+			System.out.println(c.containsString(haystack, needle));
+		}
+
 	}
+
+	public String containsString(String haystack, String needle) {
+		String response = "";
+		if (ContainsString.haystack.contains(needle))
+			response = "String is included.";
+		else
+			response = "String is not included.";
+
+		return response;
+	}
+
 }
