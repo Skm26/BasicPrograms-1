@@ -22,9 +22,9 @@ public String passwordCheck() {
 	int digitCount = 0;
 	for( int i = 0; i < password.length(); ++i) {
 		if( password.length() >= 10)
-				if (Character.isLetterOrDigit(password.charAt(i)) == true)
+				if (Character.isLetterOrDigit(password.charAt(i)) )
 					
-					if (Character.isDigit(password.charAt(i)) ==  true) 
+					if (Character.isDigit(password.charAt(i))) 
 					digitCount++;
 
 						if (digitCount >= 2) 
@@ -54,7 +54,7 @@ public String passwordCheck() {
 
 	public boolean containsLetters() {
 		for (int i = 0; i < password.length(); ++i) {
-			if ((Character.isLetter(password.charAt(i)) == true))
+			if ((Character.isLetter(password.charAt(i))))
 				return true;
 
 		}
@@ -63,7 +63,7 @@ public String passwordCheck() {
 
 	public boolean containsDigit() {
 		for (int i = 0; i < password.length(); ++i) {
-			if ((Character.isDigit(password.charAt(i)) == true))
+			if ((Character.isDigit(password.charAt(i))))
 				return true;
 		}
 		return false;
@@ -76,7 +76,7 @@ public String passwordCheck() {
 
 			char passChar = password.charAt(i);
 
-			if (Character.isDigit(passChar) == true)
+			if (Character.isDigit(passChar))
 
 				digitCount++;
 }
