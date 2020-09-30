@@ -1,6 +1,7 @@
 package strings;
 
-/*Display the middle character from a String;
+/*
+ * Display the middle character from a String;
  * If Strings's length is even, should return a substring with 2 characters
  * If String's lenght is odd, should return a substring with 1 character
  */
@@ -18,6 +19,7 @@ public class MiddleCharacter {
 		System.out.println(m.getMiddleChar("12345678"));
 
 	}
+
 	// v1
 	public char[] getMiddleChar(String myString) {
 		//checks condition and return x or y 
@@ -29,7 +31,8 @@ public class MiddleCharacter {
 		}
 		return y;
 	}
-//v2
+
+        // v2
 	public char[] middleChar(String myString) {
 
 		if (myString.length() % 2 == 0) {
@@ -44,7 +47,7 @@ public class MiddleCharacter {
 	}
 
 	
-//v3
+        // v3
 	public String middleChar() {
 
 		// check if String has odd or even length;
