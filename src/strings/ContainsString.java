@@ -2,7 +2,8 @@ package strings;
 
 import java.util.Scanner;
 
-//Check if a String contains another String; return message
+//Check if a String contains another String;
+
 public class ContainsString {
 
 	private static String haystack = " MyString";
@@ -11,23 +12,20 @@ public class ContainsString {
 
 		ContainsString c = new ContainsString();
 
-		try (Scanner input = new Scanner(System.in)) {
+		try (Scanner input = new Scanner(System.in)) 
+		{
 			System.out.println("Enter your string: ");
 			String needle = input.next();
-
-			System.out.println(c.containsString(haystack, needle));
+			//System.out.println(c.isStringContained(needle));
+			System.out.println(ContainsString.haystack.contains(needle));
 		}
-
 	}
 
-	public String containsString(String haystack, String needle) {
-		String response = "";
-		if (ContainsString.haystack.contains(needle))
-			response = "String is included.";
-		else
-			response = "String is not included.";
-
-		return response;
-	}
-
+	public boolean isStringContained(String needle) {
+		if (ContainsString.haystack.contains(needle)) 
+		{
+			return true;
+		}
+		return false;
+	}//contains already returns true or false so no need to create a method does the same thing
 }
