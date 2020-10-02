@@ -6,20 +6,27 @@ public class CharAtGivenIndex {
 
 	String myString = "This is my String";
 
-	public boolean isCharAtGivenIndex(int i) {
+	public char getCharAtIndex(int i) throws StringIndexOutOfBoundsException {
 
-		return (i < myString.length());
-
+	if (i <myString.length()) 
+	{
+		return myString.toCharArray()[i];
 	}
+		throw new StringIndexOutOfBoundsException(); 
+	}
+	
+	
 
 	public static void main(String[] args) {
 		CharAtGivenIndex c = new CharAtGivenIndex();
-
-		System.out.println(c.isCharAtGivenIndex(100));
-
-		// java method CharAt
-		// System.out.println(c.myString.charAt(100));
-		
+		try 
+		{
+			System.out.println(c.getCharAtIndex(100));
+		}
+		catch (StringIndexOutOfBoundsException exception) 
+		{
+			System.out.println("Out of bounds");
+		}
 	}
 
 }
